@@ -26,6 +26,7 @@ export class UploadService {
       return {
         uuid: file.uuid,
         name: file.name,
+        protected: !!file.password,
       };
     } catch (error) {
       throw error;

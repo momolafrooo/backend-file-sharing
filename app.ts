@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import httpError from "http-errors";
 import path from "path";
+import cors from "cors";
 
 import cookieParser from "cookie-parser";
 
@@ -8,6 +9,8 @@ import logger from "morgan";
 import { router } from "./src/routes";
 
 const app = express();
+
+app.use(cors());
 
 app.use(logger("dev"));
 app.use(express.json({ limit: "50mb" }));
